@@ -3,7 +3,6 @@ import superagentPromise from 'superagent-promise';
 
 const superagent = superagentPromise(_superagent, global.Promise);
 
-// const API_ROOT = 'http://18.144.82.161:8000/api/v1/';
 const API_ROOT = process.env.REACT_APP_API_HOST + '/api/v1/';
 
 const encode = encodeURIComponent;
