@@ -8,6 +8,7 @@ class Navigation extends Component {
       <React.Fragment>
         <Switch>
           <Route exact path="/" component={Routes.HOME} />
+          <Route exact path="/blog" component={Routes.BLOG} />
           <Route exact path="/edit-blog" component={Routes.EDIT_BLOG} />
           <Route exact path="/blog-type" component={Routes.BLOG_TYPE} />
           <Route

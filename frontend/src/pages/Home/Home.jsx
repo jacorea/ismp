@@ -5,6 +5,7 @@ import { Link, useParams } from 'react-router-dom';
 import HeroImage from 'components/HeroImage';
 import theme from '../../styles/theme';
 import { Blogposts } from '../../utils/agent';
+import BlogCardList from 'components/BlogCardList';
 
 // TODO: Just testing things out
 const MentorContainer = Styled.div`
@@ -136,10 +137,7 @@ const Home = () => {
         <StyledLink>view all</StyledLink>
       </TitleContainer>
 
-      <TitleContainer>
-        <SubTitle>Featured Blog Articles</SubTitle>
-        <StyledLink>view all</StyledLink>
-      </TitleContainer>
+      <BlogCardList blogHeader="Featured Blog Articles" />
 
       <Subscribe />
     </>

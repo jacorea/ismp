@@ -10,6 +10,7 @@ import Stories from '../pages/Stories/Stories';
 import Blogpost from '../pages/Blogs/Blogpost';
 import Terms from '../pages/Legal/Terms';
 import Privacy from '../pages/Legal/Privacy';
+import Blog from '../pages/Blog/';
 
 export const HOME = Home;
 export const EDIT_BLOG = EditBlog;
@@ -25,5 +26,6 @@ export const EDITBLOG = EditBlog;
 export const BLOGTYPE = BlogType;
 export const APPLICATIONFORM = ApplicationForm;
 export const BLOGPOST = Blogpost;
+export const BLOG = Blog;
 export const PRIVACY = Privacy;
 export const TERMS = Terms;

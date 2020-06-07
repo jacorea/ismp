@@ -17,9 +17,7 @@ const CollegeCardList = () => {
   useEffect(() => {
     const collegeInfo = async () => {
       try {
-        const collegesData = await schools
-          .get_all()
-          .then(response => response.results);
+        const collegesData = await schools.get_all().then(response => response);
         setIsLoading(false);
         setSchoolsInfo(collegesData);
       } catch (error) {

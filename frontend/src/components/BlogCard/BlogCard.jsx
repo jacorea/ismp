@@ -5,6 +5,7 @@ import { Card, Image } from 'semantic-ui-react';
 
 const StyledImage = Styled(Image)`
     height: 248px;
+    width: 330px;
     background-repeat: no-repeat;
     background-size: 100% 100%;
     border-radius: 8px 8px 0px 0px;

@@ -22,15 +22,21 @@ const StyledLink = Styled(Link)`
   font-weight: normal;
   font-size: 18px;
   line-height: 30px;
+  color: ${theme.colors.purple};
   & active {
     color: #341A93;
   }
 `;
 
+const StyledContainer = Styled.div`
+  margin: 2em 0;
+  padding: 0 13.5%;
+`;
+
 const BlogCardList = ({ blogHeader, linkText }) => {
   const cards = cardInfo.slice(0, 3).map((card, index) => {
     return (
-      <Grid.Column computer={4} mobile={16} tablet={7} key={index}>
+      <Grid.Column computer={5} mobile={16} tablet={7} key={index}>
         <BlogCard
           blogImgurl={card.imgUrl}
           blogTitle={card.title}
@@ -41,19 +47,23 @@ const BlogCardList = ({ blogHeader, linkText }) => {
   });
 
   return (
-    <Grid doubling stackable>
-      <Grid.Row>
-        <List horizontal>
-          <List.Item>
-            <StyledCategoryHeader>{blogHeader}</StyledCategoryHeader>
-          </List.Item>
-          <List.Item>
-            <StyledLink to={linkText}>view all</StyledLink>
-          </List.Item>
-        </List>
-      </Grid.Row>
-      <Grid.Row>{cards}</Grid.Row>
-    </Grid>
+    <StyledContainer>
+      <Grid relaxed stackable>
+        <Grid.Row>
+          <Grid.Column>
+            <List horizontal>
+              <List.Item>
+                <StyledCategoryHeader>{blogHeader}</StyledCategoryHeader>
+              </List.Item>
+              <List.Item>
+                <StyledLink to={linkText}>view all</StyledLink>
+              </List.Item>
+            </List>
+          </Grid.Column>
+        </Grid.Row>
+        <Grid.Row centered>{cards}</Grid.Row>
+      </Grid>
+    </StyledContainer>
   );
 };
 
