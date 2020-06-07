@@ -10,7 +10,8 @@ const StyledImage = Styled(Image)`
   background-size: 100% 100%;
   border-radius: 50%;
   transition: transform 0.5s;
-  &:hover {
+  
+  :hover {
       transform: translateY(-2px);
   }
 `;
@@ -20,7 +21,6 @@ const StyledTitle = Styled.div`
     z-index: 1;
     font-size: ${theme.fontSizes.p};
     display: inline-block;
-    background-color: rgba(0, 0, 0, 0.5); 
     padding-top: 24px;
     bottom: 0%;
     font-family: ${theme.fonts.Poppins};

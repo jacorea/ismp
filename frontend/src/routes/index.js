@@ -10,7 +10,7 @@ import Stories from '../pages/Stories/Stories';
 import Blogpost from '../pages/Blogs/Blogpost';
 import Terms from '../pages/Legal/Terms';
 import Privacy from '../pages/Legal/Privacy';
-import Blog from '../pages/Blog/';
+import Blog from '../pages/Blog/Blog';
 
 export const HOME = Home;
 export const EDIT_BLOG = EditBlog;

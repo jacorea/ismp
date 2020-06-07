@@ -47,8 +47,8 @@ const BlogCardList = ({ blogHeader, linkText }) => {
   });
 
   return (
-    <StyledContainer>
-      <Grid relaxed stackable>
+    <>
+      <Grid relaxed stackable columns="equal">
         <Grid.Row>
           <Grid.Column>
             <List horizontal>
@@ -61,9 +61,9 @@ const BlogCardList = ({ blogHeader, linkText }) => {
             </List>
           </Grid.Column>
         </Grid.Row>
-        <Grid.Row centered>{cards}</Grid.Row>
+        <Grid.Row>{cards}</Grid.Row>
       </Grid>
-    </StyledContainer>
+    </>
   );
 };
 

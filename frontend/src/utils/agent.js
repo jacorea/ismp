@@ -4,8 +4,9 @@ import superagentPromise from 'superagent-promise';
 const superagent = superagentPromise(_superagent, global.Promise);
 
 const API_ROOT = process.env.REACT_APP_API_HOST + '/api/v1/';
+const API_ROOT_WITHOUT_APIV1 = process.env.REACT_APP_API_HOST;
 
-const encode = encodeURIComponent;
+//const encode = encodeURIComponent;
 const responseBody = res => res.body;
 
 let token = null;
@@ -32,6 +33,29 @@ export const requests = {
       .then(responseBody)
 };
 
+export const Blogposts = {
+  getFeatured: () => {
+    // TODO: get this working return requests.get(`blogpost/?featured=true`)
+    return Promise.resolve([
+      {
+        title: 'Blogpost Mock',
+        description:
+          'Here is a mock blogpost description, really hoping to get this actually working soon!'
+      },
+      {
+        title: 'Blogpost Mock 2',
+        description:
+          'Here is a mock blogpost description, really hoping to get this actually working soon!'
+      },
+      {
+        title: 'Blogpost Mock 3',
+        description:
+          'Here is a mock blogpost description, really hoping to get this actually working soon!'
+      }
+    ]);
+  }
+};
+
 // Example
 // const Comments = {
 //   create: (slug, comment) =>
@@ -53,9 +77,12 @@ export const schools = {
   get_all: () => requests.get('school')
 };
 
-export const topics = {
-  get: params => requests.get('topic/' + params),
-  get_all: () => requests.get('topic')
+export const SubscribeNewsletter = {
+  post: body =>
+    superagent
+      .post(`${API_ROOT_WITHOUT_APIV1}/subscribe-newsletter/`, body)
+      .use(tokenPlugin)
+      .then(responseBody)
 };
 
 export default {

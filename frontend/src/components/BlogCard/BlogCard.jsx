@@ -2,6 +2,7 @@ import React from 'react';
 import Styled from 'styled-components';
 import theme from '../../styles/theme';
 import { Card, Image } from 'semantic-ui-react';
+import { Link } from 'react-router-dom';
 
 const StyledImage = Styled(Image)`
     height: 248px;
@@ -18,6 +19,9 @@ const StyledSecH3 = Styled.h3`
     font-size: 24px;
     line-height: 36px;
     color: ${theme.colors.black};
+    :hover {
+      color: ${theme.colors.purple};
+    }
 `;
 
 const StyledBodyText = Styled.p`
@@ -34,12 +38,26 @@ const StyledCard = Styled(Card)`
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
 `;
 
+const StyledLink = Styled(Link)`
+  font-family: ${theme.fonts.Poppins};
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 30px;
+  color: ${theme.colors.black};
+  :hover {
+    color: ${theme.colors.purple};
+  }
+`;
+
 const BlogCard = ({ blogImgurl, blogTitle, blogDescription }) => {
   return (
     <StyledCard>
       <StyledImage src={blogImgurl} alt="blog category image" />
       <Card.Content>
-        <StyledSecH3>{blogTitle}</StyledSecH3>
+        <StyledLink to="/">
+          <StyledSecH3>{blogTitle}</StyledSecH3>
+        </StyledLink>
         <StyledBodyText>{blogDescription}</StyledBodyText>
       </Card.Content>
     </StyledCard>

@@ -6,6 +6,7 @@ import HeroImage from 'components/HeroImage';
 import theme from '../../styles/theme';
 import { Blogposts } from '../../utils/agent';
 import BlogCardList from 'components/BlogCardList';
+import { Container } from 'semantic-ui-react';
 
 // TODO: Just testing things out
 const MentorContainer = Styled.div`
@@ -72,6 +73,11 @@ const StyledLink = Styled(Link)`
     padding: 0 2rem; 
 `;
 
+const BlogCardContainer = Styled.div`
+  margin: 2em 0;
+  padding: 0 13.5%;
+`;
+
 const whoBlurb =
   'International Student Mentorship Program is a nonprofit organization with a network of volunteer mentors across the United States. We are passionate about mentoring international students through their college and graduate school experience in America, from the admissions process all the way through graduation. Our goal is to provide international students with a mentor that can guide them through each step of college, grad school, and beyond.';
 const diffBlurb =
@@ -136,8 +142,9 @@ const Home = () => {
         <SubTitle>Webinar Highlights</SubTitle>
         <StyledLink>view all</StyledLink>
       </TitleContainer>
-
-      <BlogCardList blogHeader="Featured Blog Articles" />
+      <BlogCardContainer>
+        <BlogCardList blogHeader="Featured Blog Articles" />
+      </BlogCardContainer>
 
       <Subscribe />
     </>
