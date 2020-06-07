@@ -49,6 +49,14 @@ const StyledLink = Styled(Link)`
   }
 `;
 
+const WebinarLink = Styled(StyledLink)`
+  color: ${theme.colors.lightPurple};
+  text-decoration: underline;
+  :active {
+    color: ${theme.colors.purple};
+  }
+`;
+
 const topicList = topics.map((topic, id) => {
   return (
     <Grid.Column key={id} width={16}>
@@ -103,10 +111,10 @@ const Blog = () => {
                       }
                     }}
                   />
-                  <h3>Tips for College</h3>
-                  <h2>
+                  <h4>Tips for College</h4>
+                  <h3>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  </h2>
+                  </h3>
                   <p>
                     <span style={{ fontStyle: 'italic' }}>
                       May 15, 2020 by Alex Lee -
@@ -115,7 +123,7 @@ const Blog = () => {
                     fermentum pellentesque efficitur. Aliquam id lectus a libero
                     egestas tristique vitae ac diam. Lorem ipsum dolor....
                   </p>
-                  <StyledLink>Watch Webinar Highlights</StyledLink>
+                  <WebinarLink>Watch Webinar Highlights</WebinarLink>
                 </Grid.Column>
               </Grid>
             </Segment>
