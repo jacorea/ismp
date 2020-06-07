@@ -66,9 +66,13 @@ const StyledButton = Styled.button`
   font-size: 24px;
   line-height: 118.5%;
   text-align: center;
-  color: #FFFFFF;
+  color: ${theme.colors.white};
   width: 330px;
-height: 76px;
+  height: 76px;
+  margin: 25px;
+  :hover {
+    background: ${theme.colors.lightPurple};
+  }
 `;
 
 const StyledBlogSearch = Styled(BlogSearch)`
@@ -80,6 +84,8 @@ const Blog = () => {
     <Container>
       <Section>
         <h1 style={{ textAlign: 'center' }}>Blog</h1>
+      </Section>
+      <Section>
         <Grid columns={2} doubling stackable>
           <Grid.Column width={8}>
             <Segment>
@@ -90,11 +96,17 @@ const Blog = () => {
                     id="O6Xo21L0ybE"
                     placeholder="/images/image-16by9.png"
                     source="youtube"
+                    iframe={{
+                      style: {
+                        width: 480,
+                        heigth: 270
+                      }
+                    }}
                   />
-                  <h4>Tips for College</h4>
-                  <h3>
+                  <h3>Tips for College</h3>
+                  <h2>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  </h3>
+                  </h2>
                   <p>
                     <span style={{ fontStyle: 'italic' }}>
                       May 15, 2020 by Alex Lee -
@@ -108,25 +120,27 @@ const Blog = () => {
               </Grid>
             </Segment>
           </Grid.Column>
-          <Grid.Column width={8}>
-            {/* <Grid doubling stackable>
-            <Grid.Column>
-             <StyledBlogSearch />
-            </Grid.Column>
-          </Grid> */}
-
+          <Grid.Column width={7}>
             <StyledBlogSearch />
-            <Segment>
-              <Grid columns={2} doubling stackable>
+            <Segment style={{ background: '#FBFBFB', borderRadius: '8px' }}>
+              <Grid columns={2} stackable>
                 <Grid.Row>
-                  <Grid.Column width={7}>
-                    <h2>Topics</h2>
+                  <Grid.Column width={16}>
+                    <List horizontal>
+                      <List.Item>
+                        <Grid.Column>
+                          <h2>Topics</h2>
+                        </Grid.Column>
+                      </List.Item>
+                      <List.Item>
+                        <Grid.Column>
+                          <StyledLink>view all</StyledLink>
+                        </Grid.Column>
+                      </List.Item>
+                    </List>
                   </Grid.Column>
-                  <Grid.Column>
-                    <StyledLink width={5}>view all</StyledLink>
-                  </Grid.Column>
-                  {topicList}
                 </Grid.Row>
+                <Grid.Row width={8}>{topicList}</Grid.Row>
               </Grid>
             </Segment>
           </Grid.Column>
@@ -134,10 +148,8 @@ const Blog = () => {
         <BlogCardList blogHeader="Transition to America" />
         <BlogCardList blogHeader="Tips for College" />
         <BlogCardList blogHeader="Career Building" />
-        <Grid centered>
-          <Section>
-            <StyledButton>VIEW ALL BLOG ARTICLES</StyledButton>
-          </Section>
+        <Grid centered doubling stackable>
+          <StyledButton>VIEW ALL BLOG ARTICLES</StyledButton>
         </Grid>
       </Section>
     </Container>
